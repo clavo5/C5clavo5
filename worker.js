@@ -28,4 +28,4 @@ if(!rl(i+"p",5,3600000))return new Response(JSON.stringify({error:"Limite."}),{s
 try{const{documento,password}=await q.json();const em=documento+"@plataformac5.com";const ru=await fetch(e.SUPABASE_URL+"/auth/v1/admin/users?email="+encodeURIComponent(em),{headers:{"apikey":e.SUPABASE_SERVICE_KEY,"Authorization":"Bearer "+e.SUPABASE_SERVICE_KEY}});const ud=await ru.json();const usr=ud.users&&ud.users[0];if(!usr)return new Response(JSON.stringify({error:"No encontrado"}),{status:404,headers:h()});const r=await fetch(e.SUPABASE_URL+"/auth/v1/admin/users/"+usr.id,{method:"PUT",headers:{"apikey":e.SUPABASE_SERVICE_KEY,"Authorization":"Bearer "+e.SUPABASE_SERVICE_KEY,"Content-Type":"application/json"},body:JSON.stringify({password})});const d=await r.json();return new Response(JSON.stringify(r.ok?{ok:true}:{error:d.message}),{headers:h()});}catch(ex){return new Response(JSON.stringify({error:ex.message}),{status:500,headers:h()});}
 }
 return new Response("Not found",{status:404});
-}};
+}}; 
