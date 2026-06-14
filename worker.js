@@ -38,7 +38,7 @@ ctx.waitUntil(ejecutarNotificacionesProgramadas(env));
 };
 
 
-// ── CRON JOB — NOTIFICACIONES PROGRAMADAS ──
+// â”€â”€ CRON JOB â€” NOTIFICACIONES PROGRAMADAS â”€â”€
 async function ejecutarNotificacionesProgramadas(env) {
 const S = env.SUPABASE_URL;
 const K = env.SUPABASE_SERVICE_KEY;
@@ -69,7 +69,7 @@ else if (n.tipo === 'preaviso') msg = 'Plataforma C5: AVISO. Tu obligacion de '+
 else msg = 'Plataforma C5: Recordatorio. Tu obligacion de '+valor+' con '+empresa+' vence en '+n.dias_antes+' dias.';
 let enviado = false;
 if (deuda.email_deudor) {
-const asunto = n.tipo === 'preaviso' ? '⚠️ Aviso de mora — C5' : '🔔 Recordatorio de obligación — C5';
+const asunto = n.tipo === 'preaviso' ? 'âš ï¸ Aviso de mora â€” C5' : 'ðŸ”” Recordatorio de obligaciÃ³n â€” C5';
 const htmlBody = '<div style="font-family:Arial,sans-serif;max-width:520px;padding:28px;background:#111827;color:#e2e8f0;border-radius:12px;">'
 +'<h2 style="color:#00ffcc;">Plataforma C5</h2>'
 +'<p style="font-size:15px;line-height:1.7;">'+msg+'</p>'
@@ -95,4 +95,3 @@ body:JSON.stringify({estado: enviado ? 'enviada' : 'fallida', fecha_enviada: new
 });
 }
 }
- 
