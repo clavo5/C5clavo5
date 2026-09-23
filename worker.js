@@ -145,3 +145,4 @@ body:JSON.stringify({estado: enviado ? 'enviada' : 'fallida', fecha_enviada: new
 }
 }
   
+
